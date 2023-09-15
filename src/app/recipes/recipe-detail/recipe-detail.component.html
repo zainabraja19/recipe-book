@@ -1,29 +1,41 @@
 <div class="row">
     <div class="col-xs-12">
-        <img src="" alt="" class="img-responsive">
+        <img src={{recipe.imagePath}} alt="" class="img-responsive">
     </div>
 </div>
 <div class="row">
     <div class="col-xs-12">
-        <h1>Recipe Name</h1>
+        <h1>Recipe Name: {{recipe.name}}</h1>
     </div>
 </div>
 <div class="row">
     <div class="col-xs-12">
-        <div class="btn-group"><button class="btn btn-primary dropdown-toggle">
+        <div class="btn-group dropdown" appDropdown>
+            <button type="button" class="btn btn-primary dropdown-toggle" data-bs-toggle="dropdown">
                 Manage Recipe <span class="caret"></span>
             </button>
             <ul class="dropdown-menu">
-                <li><a href="#"></a>To Shopping List</li>
-                <li><a href="#"></a>Edit Recipe</li>
-                <li><a href="#"></a>Delete Recipe</li>
+                <li><a class="dropdown-item" href="#">To Shopping List</a></li>
+                <li><a class="dropdown-item" href="#">Edit Recipe</a></li>
+                <li><a class="dropdown-item" href="#">Delete Recipe</a></li>
             </ul>
         </div>
+        <!-- <div class="dropdown open">
+            <button class="btn btn-primary dropdown-toggle open" type="button" id="dropdownMenuButton1"
+                data-bs-toggle="dropdown" aria-expanded="false">
+                Manage Recipe
+            </button>
+            <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                <li><a class="dropdown-item" href="#">Action</a></li>
+                <li><a class="dropdown-item" href="#">Another action</a></li>
+                <li><a class="dropdown-item" href="#">Something else here</a></li>
+            </ul>
+        </div> -->
     </div>
 </div>
 <div class="row">
     <div class="col-xs-12">
-        Description
+        Description: {{recipe.description}}
     </div>
 </div>
 <div class="row">

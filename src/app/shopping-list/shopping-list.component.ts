@@ -15,4 +15,7 @@ export class ShoppingListComponent implements OnInit {
 
   }
 
+  addNewIngredient = ({ name, amount }: Ingredient) => {
+    this.ingredients.push(new Ingredient(name, amount))
+  }
 }
