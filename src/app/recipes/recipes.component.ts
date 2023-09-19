@@ -9,18 +9,8 @@ import { RecipesService } from './recipes.service';
   providers: [RecipesService]
 })
 export class RecipesComponent {
-  selectedRecipe: Recipe
-
-  constructor(private recipesService: RecipesService) { }
+  constructor() { }
 
   ngOnInit() {
-    this.recipesService.recipeSelected.subscribe((recipe: Recipe) => {
-      this.selectedRecipe = recipe
-    })
-  }
-
-  showRecipeDetails = (recipe: Recipe) => {
-    console.log("herw")
-    console.log(recipe)
   }
 }
