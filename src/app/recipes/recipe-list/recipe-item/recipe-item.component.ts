@@ -11,5 +11,5 @@ export class RecipeItemComponent {
   @Input() recipe: Recipe
   @Input() index: number
 
-  constructor(private recipesService: RecipesService) { }
+  constructor(private recipeService: RecipesService) { }
 }
