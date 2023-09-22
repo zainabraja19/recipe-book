@@ -6,22 +6,31 @@
             <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav mb-2 mb-lg-0">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                 <li class="nav-item">
-                    <a class="nav-link" routerLinkActive="active" routerLink="/recipes">Recipes</a>
+                    <a class="nav-link" routerLinkActive="active" routerLink="/recipes"
+                        *ngIf="isAuthenticated">Recipes</a>
                 </li>
                 <li class=" nav-item">
                     <a class="nav-link" routerLinkActive="active" routerLink="/shopping-list">Shopping List</a>
                 </li>
-                <li class="nav-item dropdown ms-auto" appDropdown>
-                    <a class="nav-link dropdown-toggle ms-auto" role="button" data-bs-toggle="dropdown"
-                        aria-expanded="false">
+            </ul>
+            <ul class="nav navbar-nav">
+                <li class=" nav-item">
+                    <a class="nav-link" routerLinkActive="active" routerLink="/auth" *ngIf="!isAuthenticated">Sign
+                        Up/Login</a>
+                </li>
+                <li class="nav-item dropdown" appDropdown *ngIf="isAuthenticated">
+                    <a class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                         Manage
                     </a>
                     <ul class="dropdown-menu">
                         <li><a class="dropdown-item" (click)="onSaveData()">Save Data</a></li>
                         <li><a class="dropdown-item" (click)="onFetchData()">Fetch Data</a></li>
                     </ul>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" *ngIf="isAuthenticated" (click)="onLogout()">Logout</a>
                 </li>
             </ul>
         </div>
